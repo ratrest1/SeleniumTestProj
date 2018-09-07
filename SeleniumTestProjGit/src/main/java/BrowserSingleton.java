@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
 import java.util.Set;
 
 public class BrowserSingleton
@@ -62,6 +63,41 @@ public class BrowserSingleton
                 break;
             case XPath:
                 returnElement = driver.findElement(new By.ByXPath(condition));
+                break;
+            default:
+
+                break;
+        }
+
+        return returnElement;
+    }
+
+    public List<WebElement> getElements(SearchType s, String condition ){
+        List<WebElement> returnElement = null;
+        switch(s){
+            case ClassName:
+                returnElement = driver.findElements(By.className(condition));
+                break;
+            case CSSSelector:
+                returnElement = driver.findElements(new By.ByCssSelector(condition));
+                break;
+            case ID:
+                returnElement = driver.findElements(new By.ById(condition));
+                break;
+            case LinkText:
+                returnElement = driver.findElements(new By.ByLinkText(condition));
+                break;
+            case Name:
+                returnElement = driver.findElements(By.name(condition));
+                break;
+            case PartialLinkText:
+                returnElement = driver.findElements(new By.ByPartialLinkText(condition));
+                break;
+            case TagName:
+                returnElement = driver.findElements(new By.ByTagName(condition));
+                break;
+            case XPath:
+                returnElement = driver.findElements(new By.ByXPath(condition));
                 break;
             default:
 
