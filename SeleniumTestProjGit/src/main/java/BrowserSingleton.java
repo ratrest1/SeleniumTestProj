@@ -10,7 +10,7 @@ public class BrowserSingleton
 {
     //My Instance
     private static BrowserSingleton instance = null;
-    private WebDriver driver = null;
+    public WebDriver driver = null;
 
     private BrowserSingleton(){
         driver = new ChromeDriver();
