@@ -14,7 +14,6 @@ public class BrowserSingleton
     public WebDriver driver = null;
 
     private BrowserSingleton(){
-        driver = new ChromeDriver();
     }
 
     public static BrowserSingleton getInstance(){
@@ -25,12 +24,12 @@ public class BrowserSingleton
     }
 
     public void setDriver( String driverStr ){
-        driver.quit();
         switch(driverStr){
             case "Chrome":
                 driver = new ChromeDriver();
                 break;
         }
+        driver.manage().window().maximize();
     }
 
     public void getPage( String pageLink ){
@@ -124,6 +123,14 @@ public class BrowserSingleton
     public void moveToElement(WebElement e){
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", e);
+    }
+
+    public void waitSeconds( int seconds ){
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void close(){
