@@ -37,6 +37,8 @@ public class BrowserSingleton
         driver.get( pageLink );
     }
 
+    public String getURL(){return driver.getCurrentUrl();}
+
     public WebElement getElement(SearchType s, String condition ){
         WebElement returnElement = null;
         switch(s){
