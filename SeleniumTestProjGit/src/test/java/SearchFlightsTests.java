@@ -6,7 +6,7 @@ import java.util.List;
 public class SearchFlightsTests {
 
     @Test
-    public void searchByCity(){
+    public void searchByCity_SingMos_Pass(){
         String flightXPath = "//*[@id=\"body-section\"]/section/div[2]/div/div[2]/ul/li[2]/a";
         String cityCSS = "a.select2-choice";
         String resultXPath = "//*[@id=\"select2-drop\"]/ul/li[2]/div";
@@ -15,6 +15,10 @@ public class SearchFlightsTests {
         String departDayXPath = "/html/body/div[13]/div[1]/table/tbody/tr[5]/td[7]";
         String guestXPath = "//*[@id=\"flights\"]/form/div[5]/div/input";
         String adultXPath = "//*[@id=\"manual_flightTravelers\"]/div/div/div[2]/section/div/div[1]/div[1]/select/option[2]";
+        String childXPath = "//*[@id=\"manual_flightTravelers\"]/div/div/div[2]/section/div/div[2]/div[1]/select/option[2]";
+        String infantXPath = "//*[@id=\"manual_flightTravelers\"]/div/div/div[2]/section/div/div[3]/div[1]/select/option[2]";
+        String guestDoneXPath = "//*[@id=\"sumManualPassenger\"]";
+        String submitXPath = "//*[@id=\"flights\"]/form/div[6]/button";
 
         BrowserSingleton browser = BrowserSingleton.getInstance();
         browser.setDriver("Chrome");
@@ -34,7 +38,7 @@ public class SearchFlightsTests {
 
         }
 
-        browser.waitSeconds(1);
+        browser.waitSeconds(3);
         WebElement resultClick = browser.getElement(SearchType.XPath, resultXPath);
         resultClick.click();
 
@@ -50,7 +54,7 @@ public class SearchFlightsTests {
 
         }
 
-        browser.waitSeconds(1);
+        browser.waitSeconds(3);
         WebElement resultAriClick = browser.getElement(SearchType.XPath, resultAriXPath);
         resultAriClick.click();
 
@@ -65,15 +69,24 @@ public class SearchFlightsTests {
         WebElement guestClick = browser.getElement(SearchType.XPath, guestXPath);
         guestClick.click();
         WebElement adultClick = browser.getElement(SearchType.XPath, adultXPath);
-        browser.waitSeconds(2);
+        browser.waitSeconds(1);
         adultClick.click();
 
-        //WebElement moreChildClick = browser.getElement(SearchType.XPath, moreChildXPath);
-        //moreChildClick.click();
-        //moreChildClick.click();
-        //moreChildClick.click();
+        WebElement childClick = browser.getElement(SearchType.XPath, childXPath);
+        browser.waitSeconds(1);
+        childClick.click();
 
-        //browser.close();
+        WebElement infantClick = browser.getElement(SearchType.XPath, infantXPath);
+        browser.waitSeconds(1);
+        infantClick.click();
+
+        WebElement guestDoneClick = browser.getElement(SearchType.XPath, guestDoneXPath);
+        guestDoneClick.click();
+
+        WebElement submitClick = browser.getElement(SearchType.XPath, submitXPath );
+        submitClick.submit();
+
+        browser.close();
     }
 
 

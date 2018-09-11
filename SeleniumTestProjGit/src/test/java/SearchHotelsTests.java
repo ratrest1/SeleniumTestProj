@@ -80,6 +80,7 @@ public class SearchHotelsTests {
         String moreChildXPath = "//*[@id=\"childPlusBtn\"]";
         String submitXPath = "//*[@id=\"HOTELS\"]/form/div[5]/button";
 
+
         //Search by City
         WebElement hotelSearchClick = browser.getElement(SearchType.CSSSelector, hotelCSS);
         WebElement hotelSearchType = browser.getElement(SearchType.CSSSelector, locationCSS);
