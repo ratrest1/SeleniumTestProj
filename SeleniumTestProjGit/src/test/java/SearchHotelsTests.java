@@ -60,6 +60,7 @@ public class SearchHotelsTests {
         WebElement submitClick = browser.getElement(SearchType.XPath, submitXPath );
         submitClick.click();
 
+        browser.waitSeconds(3);
 
         browser.close();
     }
@@ -118,6 +119,7 @@ public class SearchHotelsTests {
         WebElement submitClick = browser.getElement(SearchType.XPath, submitXPath );
         submitClick.click();
 
+        browser.waitSeconds(3);
 
         browser.close();
     }

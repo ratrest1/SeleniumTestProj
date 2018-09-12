@@ -85,6 +85,8 @@ public class SearchFlightsTests {
         WebElement submitClick = browser.getElement(SearchType.XPath, submitXPath );
         submitClick.submit();
 
+        browser.waitSeconds(3);
+
         browser.close();
     }
 

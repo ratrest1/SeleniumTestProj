@@ -18,6 +18,10 @@ public class SearchToursTest {
         WebElement searchClick = browser.getElement(SearchType.XPath, searchXPath);
         searchClick.click();
 
+        browser.waitSeconds(3);
+
+        browser.close();
+
     }
 
 

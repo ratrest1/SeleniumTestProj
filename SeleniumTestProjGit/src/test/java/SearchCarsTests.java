@@ -6,7 +6,7 @@ import java.util.List;
 public class SearchCarsTests {
 
     @Test
-    public void Search(){
+    public void SearchCars_Egypt64_Pass(){
         String carsXPath = "//*[@id=\"body-section\"]/section/div[2]/div/div[2]/ul/li[4]/a";
         String pickupXPath = "select2-choice";
         String egyptXPath = "//*[@id=\"select2-drop\"]/ul/li[3]/div";
@@ -56,5 +56,8 @@ public class SearchCarsTests {
         WebElement submitClick = browser.getElement(SearchType.XPath, submitXPath);
         submitClick.click();
 
+        browser.waitSeconds(3);
+
+        browser.close();
     }
 }
