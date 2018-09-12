@@ -1,0 +1,14 @@
+<test name="Signup" preserve-order="true">
+    <classes>
+
+        <class name="test.java.SignupTests">
+            <methods>
+                <include name="login" />
+                <include name="signup" />
+            </methods>
+        </class>
+
+        <class name="test.Test2" />
+
+    </classes>
+</test>

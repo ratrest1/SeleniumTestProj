@@ -2,9 +2,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 
 public class SignupTests {
@@ -12,13 +12,14 @@ public class SignupTests {
     static String firstName = "Test";
     static String lastName = "Account";
     static String mobileNum = "777-777-7777";
-    static String email = "test1@gmail.com";
+    static String email = "test4@gmail.com";
     static String pass = "password";
 
     @DisplayName("Tests for User information")
     @Test
     void signup(){
         BrowserSingleton browser = BrowserSingleton.getInstance();           //create instance of browser
+        browser.setDriver("Chrome");
         browser.getPage("https://phptravels.net/");                 //go into browser into php travels
         List<WebElement> element = browser.getElements(SearchType.XPath,"//*[@id=\"li_myaccount\"]/a"); //search elements with xpath to find "MY ACCOUNT"
 
@@ -46,6 +47,7 @@ public class SignupTests {
     @Test
     void logIn(){
         BrowserSingleton browser = BrowserSingleton.getInstance();      //Create single instance of the browser
+        browser.setDriver("Chrome");
         browser.getPage("https://phptravels.net/");         //go into browser into php travels
         List<WebElement> element = browser.getElements(SearchType.XPath,"//*[@id=\"li_myaccount\"]/a");     //Same procedure as login, assign elements of array to list because multiple elements in xpath
         element.get(1).click();         // My account button
