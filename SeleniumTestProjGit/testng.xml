@@ -1,14 +1,3 @@
-<test name="Signup" preserve-order="true">
-    <classes>
+<test name="SequenceTest" preserve-order = "true">
 
-        <class name="test.java.SignupTests">
-            <methods>
-                <include name="login" />
-                <include name="signup" />
-            </methods>
-        </class>
-
-        <class name="test.Test2" />
-
-    </classes>
 </test>
