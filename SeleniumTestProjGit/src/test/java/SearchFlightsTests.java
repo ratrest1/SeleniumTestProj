@@ -51,7 +51,6 @@ public class SearchFlightsTests {
                 citySearchAriClick.get(i).sendKeys("Mos");
                 break;
             }
-
         }
 
         browser.waitSeconds(3);

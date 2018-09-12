@@ -16,8 +16,8 @@ public class SearchHotelsTests {
         String locationCSS = "input.select2-input";
         String resultXPath = "//*[@id=\"select2-drop\"]/ul/li/ul/li[3]";
         String dateTextXPath = "//*[@id=\"dpd1\"]/div/input";
-        String startDayXPath = "/html/body/div[8]/div[1]/table/tbody/tr[3]/td[3]";
-        String endDayXPath = "/html/body/div[9]/div[1]/table/tbody/tr[4]/td[7]";
+        String startDayXPath = "/html/body/div[8]/div[1]/table/tbody/tr[5]/td[2]";
+        String endDayXPath = "/html/body/div[9]/div[1]/table/tbody/tr[5]/td[6]";
         String adultChildXPath = "//*[@id=\"travellersInput\"]";
         String lessAdultXPath = "//*[@id=\"adultMinusBtn\"]";
         String moreChildXPath = "//*[@id=\"childPlusBtn\"]";
@@ -73,8 +73,8 @@ public class SearchHotelsTests {
         String locationCSS = "input.select2-input";
         String resultXPath = "//*[@id=\"select2-drop\"]/ul/li[1]/ul";
         String dateTextXPath = "//*[@id=\"dpd1\"]/div/input";
-        String startDayXPath = "/html/body/div[8]/div[1]/table/tbody/tr[3]/td[3]";
-        String endDayXPath = "/html/body/div[9]/div[1]/table/tbody/tr[4]/td[7]";
+        String startDayXPath = "/html/body/div[8]/div[1]/table/tbody/tr[5]/td[3]";
+        String endDayXPath = "/html/body/div[9]/div[1]/table/tbody/tr[5]/td[6]";
         String adultChildXPath = "//*[@id=\"travellersInput\"]";
         String lessAdultXPath = "//*[@id=\"adultMinusBtn\"]";
         String moreChildXPath = "//*[@id=\"childPlusBtn\"]";
